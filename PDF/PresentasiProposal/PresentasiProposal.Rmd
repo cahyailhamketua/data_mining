@@ -1,0 +1,202 @@
+---
+title: "Proposal Proyek Data Mining"
+subtitle: "Prediksi Harga Rumah Menggunakan Regresi Linear pada Dataset Boston Housing"
+author: "Kelompok 7 - Kelas A"
+date: "2025"
+output: 
+  revealjs::revealjs_presentation:
+    theme: simple
+    transition: fade
+    center: true
+    css: header.css
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px; font-size: xxx-large;">
+
+### Kelompok 7 - Kelas A
+
+- Cahya Ilham
+- Rafii Khairan Saragih
+- Zolla Perdana Putra Harahap
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### Judul Proyek
+**Prediksi Harga Rumah Menggunakan Regresi Linear pada Dataset Boston Housing**
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px; font-size: xx-large;">
+
+### Latar Belakang Masalah
+- Pasar properti bersifat kompleks dan dinamis.
+- Harga rumah dipengaruhi faktor:
+  - Sosial  
+  - Ekonomi  
+  - Lingkungan  
+  - Demografi  
+- Boston Housing Dataset umum digunakan sebagai benchmark studi analisis harga rumah.
+- Regresi linear dipilih karena:
+  - Interpretasi mudah  
+  - Digunakan luas dalam analisis faktor harga rumah  
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### Rumusan Masalah
+1. Faktor apa yang paling memengaruhi harga median rumah di Boston?
+2. Bagaimana pengaruh variabel sosial seperti *black* terhadap harga rumah?
+3. Seberapa besar pengaruh masing-masing variabel?
+4. Seberapa akurat regresi linear memprediksi harga rumah?
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### Tujuan Proyek
+- Menganalisis hubungan variabel sosial, ekonomi, lingkungan, dan fisik terhadap harga rumah.
+- Mengukur pengaruh variabel sosial (*black*) terhadap harga properti.
+- Membangun model regresi linear berganda.
+- Mengevaluasi akurasi model dengan metrik statistik.
+</div>
+
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### Sumber Data
+- Dataset: **Boston Housing**
+- Sumber: Paket **MASS** pada R
+- Observasi: 506 rumah  
+- Variabel: 14 (13 prediktor + 1 target)
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px; font-size: xx-large;">
+
+### Karakteristik Data
+Variabel penting:
+
+- `rm`: rata-rata jumlah kamar  
+- `lstat`: persentase status sosial rendah  
+- `nox`: polusi udara  
+- `dis`: jarak pusat bisnis  
+- `black`: proporsi penduduk berkulit hitam  
+- `crim`: tingkat kriminalitas  
+- `medv`: harga median rumah (target)
+
+Tantangan:
+
+- Multikolinearitas antar variabel sosial-ekonomi.
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### Metodologi Penelitian
+Menggunakan **CRISP-DM**, terdiri dari:
+
+1. Business Understanding  
+2. Data Understanding  
+3. Data Preparation  
+4. Modeling  
+5. Evaluation  
+6. Deployment
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### CRISP-DM: Business Understanding
+- Menentukan konteks masalah properti.
+- Mengidentifikasi faktor sosial & ekonomi penting.
+- Menentukan tujuan prediksi harga rumah.
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### CRISP-DM: Data Understanding
+- Analisis statistik deskriptif.
+- Visualisasi korelasi dan distribusi variabel.
+- Evaluasi kualitas data.
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### CRISP-DM: Data Preparation
+- Normalisasi variabel numerik.
+- Membersihkan outlier (`medv`, `lstat`).
+- Seleksi fitur: korelasi & uji signifikansi.
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### CRISP-DM: Modeling
+Menggunakan **Regresi Linear Berganda**:
+
+model <- lm(medv ~ rm + lstat + nox + dis + crim + black, data = Boston)
+summary(model)
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px; font-size: xxx-large">
+
+### Terima Kasih
+
+</div>
