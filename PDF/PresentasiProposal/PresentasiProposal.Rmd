@@ -195,6 +195,29 @@ summary(model)
 <div class="slide-header-left">Usulan Proposal Proyek</div>
 <div class="slide-header-right">Kelompok 7 - Kelas A</div>
 <div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### CRISP-DM: Evaluation
+**Mengukur performa model, apakah sudah menjawab tujuan bisnis.**:
+
+Cek R², p-value, akurasi model.
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### CRISP-DM: Deployment
+**Menerapkan model ke dunia nyata, membuat dashboard, laporan, atau API**:
+
+</div>
+---
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
 <div class="center middle" style="padding: 10px; font-size: xxx-large">
 
 ### Terima Kasih
