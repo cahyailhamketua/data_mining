@@ -1,6 +1,4 @@
 \usepackage[indonesian]{babel}
-\usepackage{float}
-\usepackage{array}
 \usepackage{xcolor}
 \usepackage{color}
 \usepackage{colortbl}
@@ -17,8 +15,7 @@
 \usepackage{smartdiagram}
 \usepackage{tcolorbox}
 \usepackage{scrextend}
-\usepackage{caption}
-\captionsetup{font=small,skip=6pt}
+\usepackage[font=small,skip=6pt]{caption}
 \usetikzlibrary{positioning,shapes.misc}
 \usetikzlibrary{mindmap}
 \usetikzlibrary{backgrounds, decorations.fractals}
@@ -90,3 +87,22 @@
 \newenvironment{indentpar}
   {\par\begingroup\leftskip=1cm\noindent}
   {\par\endgroup}
+  
+% --- Fix LaTeX paragraph issue with Pandoc ---
+\usepackage{titlesec}
+
+% Redefine paragraph and subparagraph to behave like block headings
+\titleformat{\paragraph}[block]
+  {\normalfont\normalsize\bfseries}
+  {\theparagraph}{1em}{}
+
+\titleformat{\subparagraph}[block]
+  {\normalfont\normalsize\bfseries}
+  {\thesubparagraph}{1em}{}
+
+% Numbering style
+\renewcommand\thesection{\Roman{section}}
+\renewcommand\thesubsection{\Alph{subsection}}
+\renewcommand\thesubsubsection{\arabic{subsubsection}}
+\renewcommand\theparagraph{\alph{paragraph}}
+\renewcommand\thesubparagraph{(\arabic{subparagraph})}

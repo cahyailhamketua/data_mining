@@ -1,0 +1,732 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Kelompok 7 Kelas A},
+  pdfauthor={Kelompok 7},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Kelompok 7 Kelas A}
+\author{Kelompok 7}
+\date{30 November 2025}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\section{Judul Proyek}\label{judul-proyek}
+
+\textbf{Prediksi Harga Rumah Menggunakan Regresi Linear pada Dataset
+Boston Housing}
+
+\section{Pendahuluan}\label{pendahuluan}
+
+Sektor properti merupakan salah satu sektor ekonomi yang memiliki
+peranan penting dalam dinamika pembangunan wilayah dan kesejahteraan
+masyarakat. Harga rumah tidak hanya mencerminkan nilai fisik bangunan,
+tetapi juga menggambarkan kondisi sosial, kualitas lingkungan, serta
+struktur demografis suatu wilayah. Dalam konteks ekonomi modern,
+penentuan nilai properti menjadi semakin kompleks karena melibatkan
+interaksi multidimensional dari faktor sosial-ekonomi, aksesibilitas,
+lingkungan fisik, dan kebijakan pemerintah (Zietz et al., 2008). Oleh
+karena itu, pemodelan harga rumah membutuhkan pendekatan kuantitatif
+yang mampu menangkap hubungan antar variabel secara sistematis dan
+terukur.
+
+Dataset Boston Housing merupakan salah satu dataset paling terkenal
+dalam literatur analisis regresi dan machine learning karena menyediakan
+14 variabel yang mencerminkan berbagai aspek sosial, lingkungan, dan
+properti fisik di wilayah Boston. Variabel-variabel tersebut mencakup
+karakteristik kriminalitas (crim), kualitas udara (nox), akses
+pendidikan (ptratio), struktur demografis (black), hingga kondisi
+ekonomi masyarakat (lstat). Harrison dan Rubinfeld (1978) memperkenalkan
+dataset ini dalam penelitian klasik mengenai hedonic pricing, dan sejak
+saat itu dataset ini menjadi standar referensi untuk penelitian yang
+membahas faktor-faktor yang memengaruhi nilai properti.
+
+Sejumlah penelitian menyatakan bahwa harga rumah sangat dipengaruhi oleh
+faktor sosial-ekonomi dan kualitas lingkungan sekitar, seperti tingkat
+kriminalitas, kepadatan industri, maupun tingkat pendidikan (Li et al.,
+2019). Faktor demografis seperti proporsi penduduk berkulit hitam
+(black) juga menjadi variabel penting dalam analisis harga rumah,
+terutama dalam konteks sejarah segregasi perumahan dan dinamika sosial
+yang terjadi di kota-kota besar Amerika Serikat (Kaufman \& Kalter,
+2020). Namun demikian, analisis variabel demografis harus dilakukan
+secara hati-hati dengan mempertimbangkan kemungkinan bias struktural dan
+keterbatasan interpretasi kausal.
+
+Selain faktor sosial, elemen fisik seperti jumlah kamar (rm), usia
+bangunan (age), dan pajak properti (tax) juga terbukti memiliki hubungan
+signifikan dengan nilai properti (Sleszynski, 2020). Variabel
+aksesibilitas seperti jarak ke pusat kota (dis) dan kedekatan dengan
+fasilitas transportasi (rad) pun berperan besar dalam menentukan
+preferensi pasar, sesuai dengan teori lokasi urban bahwa rumah yang
+memiliki akses mudah ke fasilitas publik umumnya dihargai lebih tinggi
+(Glaeser et al., 2018).
+
+Untuk menganalisis faktor-faktor tersebut, penelitian ini menggunakan
+pendekatan regresi linear berganda, yaitu metode statistik yang banyak
+digunakan dalam kajian harga properti karena kemampuannya untuk
+memberikan interpretasi jelas terhadap pengaruh masing-masing variabel
+independen. Selain itu, regresi linear memiliki kelebihan berupa
+transparansi model serta asumsi matematika yang dapat diuji, sehingga
+cocok digunakan sebagai baseline analisis sebelum dibandingkan dengan
+model machine learning yang lebih kompleks (James et al., 2013).
+
+Kerangka kerja CRISP-DM digunakan sebagai metodologi utama dalam
+penelitian ini karena menyediakan alur kerja sistematis mulai dari
+pemahaman masalah, eksplorasi data, persiapan data, pemodelan, evaluasi,
+hingga deployment (Schröer et al., 2021). Metode ini memungkinkan proses
+pengembangan model dilakukan secara terstruktur serta meminimalkan
+risiko kesalahan dalam setiap tahapan analisis.
+
+Dengan menggabungkan pendekatan statistik dan kerangka metodologis yang
+kokoh, penelitian ini bertujuan untuk mengidentifikasi faktor-faktor
+utama yang memengaruhi harga rumah pada Boston Housing Dataset, mengukur
+sejauh mana masing-masing variabel berkontribusi terhadap harga
+properti, serta mengevaluasi kinerja model regresi linear dalam
+melakukan prediksi. Selain itu, penelitian ini memberikan perhatian
+khusus pada pengaruh variabel demografis black sebagai bagian dari
+analisis sosial-ekonomi yang relevan dengan isu pemerataan,
+diskriminasi, dan dinamika perumahan di perkotaan modern.
+
+\section{Dataset}\label{dataset}
+
+Dataset yang digunakan pada penelitian ini adalah dataset Boston yang
+berasal dari paket MASS dalam R. Jumlah observasi pada dataset ini
+sebanyak 506 rumah. Terdapat 13 variabel prediktor dan 1 variabel target
+yang menjadikan total variabel pada dataset ini adalah 14 variabel.
+Adapun variabel-variabel yang terdapat pada dataset Boston adalah
+sebagai berikut.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.0702}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1140}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.8158}}@{}}
+\caption{Tabel Deskripsi Fitur Dataset Boston Housing}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Fitur
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Satuan
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Deskripsi
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Fitur
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Satuan
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Deskripsi
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+crim & Rasio & Tingkat kriminalitas per kapita berdasarkan kota. \\
+zn & Persen & Persentase luas lahan yang diperuntukkan untuk hunian
+dengan ukuran lebih dari 25.000 sq ft. \\
+indus & Persen & Persentase luas kawasan industri non-retail di kota. \\
+chas & Biner & Dummy variabel: 1 jika lokasi berbatasan dengan Sungai
+Charles, 0 jika tidak. \\
+nox & ppm & Konsentrasi nitrogen oksida (NOx) di udara. \\
+rm & Jumlah kamar & Rata-rata jumlah kamar per rumah. \\
+age & Persen & Persentase unit hunian yang dibangun sebelum 1940. \\
+dis & Indeks & Indeks jarak terukur ke lima pusat kerja utama di
+Boston. \\
+rad & Indeks & Indeks aksesibilitas ke radial highway (akses ke jalan
+raya utama). \\
+tax & Per 10rb USD & Tarif pajak properti per 10.000 USD. \\
+ptratio & Rasio & Rasio jumlah murid per guru di kota. \\
+black & Indeks & Variabel transformasi rasial berdasarkan proporsi
+penduduk kulit hitam. \\
+lstat & Persen & Persentase penduduk berstatus sosial-ekonomi rendah. \\
+medv & Ribu USD & Median harga rumah yang ditempati pemilik (dalam
+ribuan dolar). \\
+\end{longtable}
+
+\section{Tahapan Penelitian}\label{tahapan-penelitian}
+
+\subsection{Persiapan Awal}\label{persiapan-awal}
+
+\subsubsection{Memanggil library yang
+diperlukan}\label{memanggil-library-yang-diperlukan}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(MASS)}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(caret)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+Memanggil library-library penting untuk memudahkan dalam pembangunan dan
+evaluasi model. Terdapat 4 libraries yang digunakan, antara lain
+
+\begin{itemize}
+\tightlist
+\item
+  MASS: library ini dipakai untuk memanggil dataset Boston yang
+  digunakan dalam pemodelan.
+\item
+  dplyr: library ini digunakan agar memudahkan dalam manipulasi data.
+\item
+  caret: library ini digunakan untuk memudahkan dalam membagi dataset
+  menjadi data latih dan data uji.
+\item
+  ggplot2: library ini digunakan agar memudahkan dalam visualisasi data
+\end{itemize}
+
+\subsubsection{Memuat dataset Boston dan melakukan analisa
+awal}\label{memuat-dataset-boston-dan-melakukan-analisa-awal}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{data}\NormalTok{(}\StringTok{"Boston"}\NormalTok{)}
+\NormalTok{df }\OtherTok{\textless{}{-}}\NormalTok{ Boston}
+\FunctionTok{str}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+'data.frame':   506 obs. of  14 variables:
+ $ crim   : num  0.00632 0.02731 0.02729 0.03237 0.06905 ...
+ $ zn     : num  18 0 0 0 0 0 12.5 12.5 12.5 12.5 ...
+ $ indus  : num  2.31 7.07 7.07 2.18 2.18 2.18 7.87 7.87 7.87 7.87 ...
+ $ chas   : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ nox    : num  0.538 0.469 0.469 0.458 0.458 0.458 0.524 0.524 0.524 0.524 ...
+ $ rm     : num  6.58 6.42 7.18 7 7.15 ...
+ $ age    : num  65.2 78.9 61.1 45.8 54.2 58.7 66.6 96.1 100 85.9 ...
+ $ dis    : num  4.09 4.97 4.97 6.06 6.06 ...
+ $ rad    : int  1 2 2 3 3 3 5 5 5 5 ...
+ $ tax    : num  296 242 242 222 222 222 311 311 311 311 ...
+ $ ptratio: num  15.3 17.8 17.8 18.7 18.7 18.7 15.2 15.2 15.2 15.2 ...
+ $ black  : num  397 397 393 395 397 ...
+ $ lstat  : num  4.98 9.14 4.03 2.94 5.33 ...
+ $ medv   : num  24 21.6 34.7 33.4 36.2 28.7 22.9 27.1 16.5 18.9 ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     crim zn indus chas   nox    rm  age    dis rad tax ptratio  black lstat
+1 0.00632 18  2.31    0 0.538 6.575 65.2 4.0900   1 296    15.3 396.90  4.98
+2 0.02731  0  7.07    0 0.469 6.421 78.9 4.9671   2 242    17.8 396.90  9.14
+3 0.02729  0  7.07    0 0.469 7.185 61.1 4.9671   2 242    17.8 392.83  4.03
+4 0.03237  0  2.18    0 0.458 6.998 45.8 6.0622   3 222    18.7 394.63  2.94
+5 0.06905  0  2.18    0 0.458 7.147 54.2 6.0622   3 222    18.7 396.90  5.33
+6 0.02985  0  2.18    0 0.458 6.430 58.7 6.0622   3 222    18.7 394.12  5.21
+  medv
+1 24.0
+2 21.6
+3 34.7
+4 33.4
+5 36.2
+6 28.7
+\end{verbatim}
+
+Dengan rangkaian baris kode ini, dataset Boston dapat dimuat untuk
+dilakukan analisa. Setelah itu, dengan fungsi str() dapat terlihat
+struktur data dari dataset dan dengan fungsi head() dapat terlihat 5
+baris data pertama dari dataset.
+
+\subsection{Pembagian Data}\label{pembagian-data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+\NormalTok{train\_index }\OtherTok{\textless{}{-}} \FunctionTok{createDataPartition}\NormalTok{(df}\SpecialCharTok{$}\NormalTok{medv, }\AttributeTok{p =} \FloatTok{0.8}\NormalTok{, }\AttributeTok{list =} \ConstantTok{FALSE}\NormalTok{)}
+\NormalTok{train\_data }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{slice}\NormalTok{(train\_index)}
+\NormalTok{test\_data }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{slice}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{train\_index)}
+\end{Highlighting}
+\end{Shaded}
+
+Pada kode ini dilakukan pembagian data dengan ketentuan 80\% data latih
+dan 20\% data uji. Fungsi createDataPartition dari library caret
+digunakan agar distribusi target tetap seimbang.
+
+\subsection{Normalisasi Data}\label{normalisasi-data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{preproc }\OtherTok{\textless{}{-}} \FunctionTok{preProcess}\NormalTok{(train\_data, }\AttributeTok{method =} \FunctionTok{c}\NormalTok{(}\StringTok{"center"}\NormalTok{, }\StringTok{"scale"}\NormalTok{))}
+\NormalTok{train\_scaled }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(preproc, train\_data)}
+\NormalTok{test\_scaled  }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(preproc, test\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+Selanjutnya dilakukan normalisasi data menggunakan Z-score. Tujuannya
+untuk menyetarakan skala semua variabel sehingga dapat mencegah fitur
+berskala besar mendominasi model. Hal ini dilakukan agar dapat membantu
+model menjadi lebih stabil.
+
+\subsection{Pembangunan Model}\label{pembangunan-model}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{model }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(medv }\SpecialCharTok{\textasciitilde{}}\NormalTok{ ., }\AttributeTok{data =}\NormalTok{ train\_scaled)}
+\NormalTok{pred }\OtherTok{\textless{}{-}} \FunctionTok{predict}\NormalTok{(model, }\AttributeTok{newdata =}\NormalTok{ test\_scaled)}
+\end{Highlighting}
+\end{Shaded}
+
+Model yang digunakan adalah model regresi linier karena model ini sangat
+cocok digunakan untuk memprediksi sesuatu. Model dilatih menggunakan
+data latih yang sudah dinormalisasi sebelumnya.
+
+Setelah membangun model, prediksi dilakukan terhadap model menggunakan
+data uji yang juga sudah dinormalisasi sebelumnya.
+
+\subsection{Evaluasi Model}\label{evaluasi-model}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{error }\OtherTok{\textless{}{-}}\NormalTok{ pred }\SpecialCharTok{{-}}\NormalTok{ test\_scaled}\SpecialCharTok{$}\NormalTok{medv}
+\NormalTok{MAE  }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(}\FunctionTok{abs}\NormalTok{(error))}
+\NormalTok{MSE  }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{((error)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\NormalTok{RMSE }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(MSE)}
+\NormalTok{R2   }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{sum}\NormalTok{((error)}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{) }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{((test\_scaled}\SpecialCharTok{$}\NormalTok{medv }\SpecialCharTok{{-}} \FunctionTok{mean}\NormalTok{(test\_scaled}\SpecialCharTok{$}\NormalTok{medv))}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Model dievaluasi menggunakan MAE (Mean Absolute Error), MSE (Mean
+Squared Error), RMSE (Root Mean Squared Error), dan R-squared.
+
+\section{Hasil dan Pembahasan}\label{hasil-dan-pembahasan}
+
+\subsection{Hasil Evaluasi Model}\label{hasil-evaluasi-model}
+
+Setelah melakukan evaluasi terhadap data uji (dalam satuan standar
+deviasi), ditemukan nilai berikut:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{round}\NormalTok{(}\FunctionTok{c}\NormalTok{(MAE, MSE, RMSE, R2), }\DecValTok{3}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.367 0.251 0.501 0.757
+\end{verbatim}
+
+Hal ini menyatakan bahwa
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  MAE = 0.367 Rata-rata prediksi meleset sebesar 36.7\% dari 1 standar
+  deviasi harga rumah.
+\item
+  RMSE = 0.501 Rata-rata error setelah memperhatikan outlier sebesar
+  50.1\% dari 1 standar deviasi harga rumah.
+\item
+  R-squared = 0.757 Model mampu menjelaskan 75.7\% variasi harga rumah
+\end{enumerate}
+
+\subsection{Feature Importance}\label{feature-importance}
+
+Setelah dilakukan evaluasi, dapat terlihat pengaruh masing-masing fitur
+berdasarkan besar koefisien regresi. Adapun urutannya dari yang paling
+berpengaruh hingga yang tidak berpengaruh tertera pada tabel berikut.
+
+\begin{longtable}[]{@{}llrr@{}}
+\caption{Tabel Urutan Pengaruh Fitur pada Dataset Boston
+Housing}\tabularnewline
+\toprule\noalign{}
+& feature & coef & abs\_coef \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+& feature & coef & abs\_coef \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+lstat & lstat & -0.437 & 0.437 \\
+rad & rad & 0.318 & 0.318 \\
+dis & dis & -0.316 & 0.316 \\
+rm & rm & 0.279 & 0.279 \\
+tax & tax & -0.230 & 0.230 \\
+ptratio & ptratio & -0.226 & 0.226 \\
+nox & nox & -0.216 & 0.216 \\
+black & black & 0.102 & 0.102 \\
+zn & zn & 0.098 & 0.098 \\
+crim & crim & -0.085 & 0.085 \\
+chas & chas & 0.065 & 0.065 \\
+age & age & 0.030 & 0.030 \\
+indus & indus & -0.010 & 0.010 \\
+(Intercept) & (Intercept) & 0.000 & 0.000 \\
+\end{longtable}
+
+\subsubsection{Fitur-fitur Berpengaruh}\label{fitur-fitur-berpengaruh}
+
+Berdasarkan hasil model regresi linear dan urutan koefisien, ada lima
+fitur paling berpengaruh terhadap harga rumah (medv), yaitu lstat, dis,
+rm, rad, dan tax.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  lstat (persentase penduduk dengan status ekonomi rendah)
+\end{enumerate}
+
+Koefisien paling besar menunjukkan bahwa ketika persentase penduduk
+berstatus ekonomi rendah meningkat, harga rumah cenderung turun secara
+signifikan.
+
+Ini logis secara sosial-ekonomi dimana lingkungan dengan status ekonomi
+rendah sering khawatir soal fasilitas, kriminalitas, atau kualitas
+lingkungan. Hal-hal ini dapat menurunkan daya tarik properti sehingga
+harga menjadi lebih rendah. Secara teori, harga properti sering
+berkorelasi negatif dengan kemiskinan atau status sosial rendah dalam
+literatur perkotaan (Mayo, 1981).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  dis (jarak ke pusat kota/akses ke pusat kerja)
+\end{enumerate}
+
+Nilai koefisien besar menunjukkan bahwa lokasi dan kemudahan akses
+mempengaruhi harga dimana ketika rumah lebih dekat ke pusat atau
+fasilitas cenderung lebih mahal. Hal ini sesuai teori ``lokasi premium''
+yaitu akses transportasi, pusat kerja, sekolah, layanan publik
+meningkatkan nilai properti (Ayazli, 2019).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  rm (rata-rata jumlah kamar / ukuran rumah)
+\end{enumerate}
+
+Koefisien positif cukup besar yang menyatakan rumah dengan kamar/ruang
+lebih banyak/luas biasanya dihargai lebih tinggi. Secara logis, kamar
+lebih banyak = properti lebih luas/nyaman. Banyak penelitian harga rumah
+menekankan size/luas sebagai faktor dominan (Chin \& Chau, 2003).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  rad (akses menuju jalan raya / infrastruktur transportasi)
+\end{enumerate}
+
+Pengaruh menunjukkan bahwa akses transportasi utama meningkatkan nilai
+rumah. Teori urban menunjukkan bahwa kemudahan mobilitas / akses
+transportasi meningkatkan nilai properti karena kemudahan akses ke
+pekerjaan, layanan, dan lain-lain. Hal ini sering dipakai dalam
+penilaian nilai lokasi (Debrezion et al., 2007).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  tax (pajak properti)
+\end{enumerate}
+
+Koefisien negatif menunjukkan bahwa pajak tinggi kemungkinan menurunkan
+minat beli sehingga menurunkan harga pasar rumah. Secara logis, pajak
+tinggi bisa dianggap ``beban'' bagi pembeli sehingga mereka cenderung
+menawar lebih rendah (O'Sullivan, 2012).
+
+\subsubsection{Pengaruh fitur black}\label{pengaruh-fitur-black}
+
+Variabel black dalam dataset Boston merupakan hasil tranformasi
+matematika yang didasarkan pada rumus.
+
+black = 1000 (Bk - 0.63)\^{}2
+
+dimana Bk adalah proporsi penduduk kulit hitam dengan nilai antara 0-1.
+Dalam hal ini, nilai black menjadi besar ketika proporsi penduduk kulit
+hitam kecil, dan menjadi kecil ketika proporsi penduduk kulit hitam
+besar.
+
+Hal ini sejalan dengan temuan pada hasil koefisien regresi yang bernilai
+0.092. Hasil ini menyatakan bahwa ketika nilai black naik (proporsi
+penduduk kulit hitam sedikit), maka harga properti juga ikut naik
+(menjadi lebih mahal).
+
+Penelitian oleh Harrison \& Rubinfeld (1978) menunjukkan bahwa kawasan
+dengan proporsi penduduk kulit hitam yang lebih tinggi secara historis
+menghadapi nilai properti yang lebih rendah. Karena itu, hasil model ini
+sejalan dengan pola historis di Boston pada periode pengumpulan data.
+
+\subsection{Visualisasi}\label{visualisasi}
+
+Model divisualisasikan dengan plot harga aktual vs prediksi dengan
+menggunakan garis merah yang menunjukkan prediksi sempurna.
+
+\begin{center}\includegraphics{LaporanHasil_files/figure-latex/unnamed-chunk-10-1} \end{center}
+
+Berdasarkan visualisasi scatter plot antara harga aktual dan prediksi,
+model regresi linear menunjukkan performa yang cukup baik. Mayoritas
+titik berada dekat garis referensi y = x, menandakan prediksi berada di
+kisaran yang sesuai dengan nilai aktual. Pola sebaran titik mengikuti
+garis diagonal, sehingga hubungan linier antara variabel prediktor dan
+harga rumah berhasil ditangkap oleh model. Beberapa titik yang menjauh
+dari garis menunjukkan keberadaan error pada nilai ekstrem, namun secara
+umum penyebarannya masih moderat. Visual ini memperkuat hasil evaluasi
+kuantitatif (R² = 0.757) bahwa model memiliki kemampuan prediksi yang
+cukup baik.
+
+\section{Penutup}\label{penutup}
+
+\subsection{Kesimpulan}\label{kesimpulan}
+
+Berdasarkan hasil analisis dan pemodelan menggunakan regresi linear
+berganda pada Boston Housing Dataset, dapat disimpulkan bahwa model
+mampu memberikan performa prediksi yang cukup baik dengan nilai
+R-squared sebesar 0.757, yang berarti model dapat menjelaskan sekitar
+75.7\% variasi harga rumah. Evaluasi menggunakan MAE, MSE, dan RMSE juga
+menunjukkan bahwa tingkat kesalahan prediksi masih berada dalam batas
+yang dapat diterima untuk model baseline.
+
+Analisis koefisien regresi menunjukkan bahwa faktor-faktor yang paling
+berpengaruh terhadap harga rumah adalah lstat, dis, rm, rad, dan tax.
+Variabel lstat memiliki pengaruh negatif paling kuat, menandakan bahwa
+kondisi sosial-ekonomi masyarakat memiliki peran besar dalam menentukan
+nilai properti. Variabel rm dan dis menunjukkan pentingnya ukuran rumah
+dan aksesibilitas terhadap pusat kota. Sementara itu, variabel
+demografis black memberikan gambaran terkait dinamika sosial yang turut
+mempengaruhi pasar perumahan, meskipun interpretasinya tetap perlu
+dilakukan secara hati-hati.
+
+Secara keseluruhan, regresi linear terbukti efektif sebagai model dasar
+dalam memprediksi harga properti serta memahami hubungan antar variabel
+dalam konteks analisis data perumahan.
+
+\subsection{Saran}\label{saran}
+
+\begin{itemize}
+\tightlist
+\item
+  Penggunaan Model yang Lebih Kompleks
+\end{itemize}
+
+Untuk meningkatkan akurasi prediksi, penelitian selanjutnya dapat
+menggunakan model yang lebih canggih seperti Random Forest, Gradient
+Boosting, atau Neural Networks. Model-model tersebut mampu menangkap
+hubungan non-linear yang tidak ditangani dengan baik oleh regresi
+linear.
+
+\begin{itemize}
+\tightlist
+\item
+  Penanganan Outlier dan Transformasi Data
+\end{itemize}
+
+Beberapa variabel pada dataset Boston Housing memiliki distribusi yang
+miring (skewed). Penerapan transformasi log, normalisasi tambahan, atau
+penanganan outlier dapat meningkatkan stabilitas dan performa model.
+
+\begin{itemize}
+\tightlist
+\item
+  Menambah Analisis Multikolineritas
+\end{itemize}
+
+Regresi linear sensitif terhadap multikolineritas. Analisis VIF
+(Variance Inflation Factor) dapat dilakukan untuk memastikan tidak ada
+variabel yang saling berkorelasi tinggi sehingga memengaruhi
+interpretasi model.
+
+\begin{itemize}
+\tightlist
+\item
+  Cross-Validation untuk Robustness Model
+\end{itemize}
+
+Untuk meningkatkan keandalan hasil, sebaiknya dilakukan k-fold
+cross-validation agar performa model tidak hanya bergantung pada satu
+kali pembagian data latih dan data uji.
+
+\begin{itemize}
+\tightlist
+\item
+  Pengayaan Dataset
+\end{itemize}
+
+Dataset Boston Housing memiliki keterbatasan dalam konteks modern.
+Analisis dapat diperluas menggunakan dataset perumahan yang lebih baru
+dan lebih beragam sehingga hasil penelitian lebih relevan dengan kondisi
+pasar properti saat ini.
+
+\section{Daftar Pustaka}\label{daftar-pustaka}
+
+Ayazli, I. E. (2019). An Empirical Study Investigating the Relationship
+between Land Prices and Urban Geometry. ISPRS International Journal of
+Geo-Information, 8(10), 457. \url{https://doi.org/10.3390/ijgi8100457}
+
+Chin, T. L., \& Chau, K. W. (2003). A Critical Review of Literature on
+the Hedonic Price Model. International Journal for Housing Science and
+Its Applications, 27(2), 145--165.
+
+Debrezion, G., Pels, E., \& Rietveld, P. (2007). The Impact of Railway
+Stations on Residential and Commercial Property Value: A Meta-analysis.
+The Journal of Real Estate Finance and Economics, 35(2), 161--180.
+\url{https://doi.org/10.1007/s11146-007-9032-z}
+
+Glaeser, E. L., Kahn, M. E., \& Rappaport, J. (2018). Why do the poor
+live in cities? The role of public transportation. Journal of Urban
+Economics, 63(1), 1--24.
+
+Harrison, D., \& Rubinfeld, D. L. (1978). Hedonic housing prices and the
+demand for clean air. Journal of Environmental Economics and Management,
+5(1), 81--102.
+
+James, G., Witten, D., Hastie, T., \& Tibshirani, R. (2013). An
+introduction to statistical learning: With applications in R. Springer.
+
+Kaufman, J., \& Kalter, F. (2020). Ethnoracial segregation in housing
+markets: A structural analysis. Urban Affairs Review, 56(4), 1155--1182.
+
+Li, X., Zhang, Q., \& Wu, Q. (2019). Determinants of housing price
+dynamics in urban areas: A data-driven approach. Journal of Real Estate
+Finance and Economics, 59(2), 241--265.
+
+Mayo, S. K. (1981). Theory and Estimation in the Economics of Housing
+Demand. Journal of Urban Economics, 10(1), 95--116.
+\url{https://doi.org/10.1016/0094-1190(81)90025-5}
+
+O'Sullivan, A. (2012). Urban economics (8. ed). McGraw-Hill/Irwin.
+
+Schröer, C., Kruse, F., \& Gómez, J. M. (2021). A systematic literature
+review on applying CRISP-DM process model. Procedia Computer Science,
+181, 526--534.
+
+Sleszynski, P. (2020). Housing prices and spatial development: Empirical
+evidence from metropolitan regions. Cities, 96, 102--112.
+
+Zietz, J., Zietz, E. N., \& Sirmans, G. S. (2008). Determinants of house
+prices: A quantile regression approach. Journal of Real Estate
+Literature, 16(1), 1--23.
+
+\end{document}

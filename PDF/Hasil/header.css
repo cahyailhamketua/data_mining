@@ -1,0 +1,28 @@
+.slide-header-left {
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  font-size: 12px;
+  color: #000;
+  z-index: 1000;
+}
+
+.slide-header-right {
+  position: fixed;
+  top: 0px;
+  right: 20px;
+  font-size: 12px;
+  color: #000;
+  z-index: 1000;
+}
+
+.slide-header-line {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #ddd;
+  z-index: 999;
+}
