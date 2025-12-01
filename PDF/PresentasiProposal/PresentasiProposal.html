@@ -467,7 +467,7 @@ border-color: gray;
 }
 </style>
 
-    <style type="text/css">.slide-header-left {position: fixed;top: 0px;left: 20px;font-size: 12px;color: #000;z-index: 1000;}.slide-header-right {position: fixed;top: 0px;right: 20px;font-size: 12px;color: #000;z-index: 1000;}.slide-header-line {position: fixed;top: 30px;left: 0;right: 0;height: 1px;width: 100%;background-color: #ddd;z-index: 999;}</style>
+    <style type="text/css">.slide-header-left,.slide-header-right {position: fixed;top: 12px;font-size: 16px;font-weight: 600;color: #2c3e50;z-index: 9999;opacity: 0.95;}.slide-header-left {left: 30px;}.slide-header-right {right: 30px;}.slide-header-line {position: fixed;top: 55px;left: 0;right: 0;height: 2px;background: linear-gradient(to right, #2c3e50, #bdc3c7);opacity: 0.7;z-index: 9998;}.reveal .slides section {padding-top: 70px !important; }.reveal h1, .reveal h2, .reveal h3 {color: #2c3e50;font-weight: 700;}.reveal p, .reveal li {font-size: 1.1rem;line-height: 1.5;color: #34495e;}.title-slide {text-align: center;margin-top: 80px;}.reveal .slide-header-left,.reveal .slide-header-right,.reveal .slide-header-line {position: fixed !important;}</style>
     <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
 document.addEventListener('DOMContentLoaded', function(e) {
@@ -913,7 +913,6 @@ Kelompok 7 - Kelas A
 <div class="center middle" style="padding: 10px;">
 <h3 id="kesimpulan">Kesimpulan</h3>
 <ul>
-<li>R² = 0.757 → model cukup baik</li>
 <li>Faktor paling berpengaruh: lstat, dis, rm, rad, tax</li>
 <li>Regresi linear efektif sebagai baseline</li>
 </ul>
@@ -923,123 +922,8 @@ Kelompok 7 - Kelas A
 <li>Tangani outlier &amp; distribusi skewed</li>
 <li>Tambah analisis multikolineritas</li>
 <li>Lakukan cross-validation</li>
-<li>Gunakan dataset perumahan yang lebih baru</li>
 </ul>
 </div>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Usulan Proposal Proyek
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="crisp-dm-business-understanding" class="center middle" style="padding: 10px;">
-<h3>CRISP-DM: Business Understanding</h3>
-<ul>
-<li>Menentukan konteks masalah properti.</li>
-<li>Mengidentifikasi faktor sosial &amp; ekonomi penting.</li>
-<li>Menentukan tujuan prediksi harga rumah.</li>
-</ul>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Usulan Proposal Proyek
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="crisp-dm-data-understanding" class="center middle" style="padding: 10px;">
-<h3>CRISP-DM: Data Understanding</h3>
-<ul>
-<li>Analisis statistik deskriptif.</li>
-<li>Visualisasi korelasi dan distribusi variabel.</li>
-<li>Evaluasi kualitas data.</li>
-</ul>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Usulan Proposal Proyek
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="crisp-dm-data-preparation" class="center middle" style="padding: 10px;">
-<h3>CRISP-DM: Data Preparation</h3>
-<ul>
-<li>Normalisasi variabel numerik.</li>
-<li>Membersihkan outlier (<code>medv</code>, <code>lstat</code>).</li>
-<li>Seleksi fitur: korelasi &amp; uji signifikansi.</li>
-</ul>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Usulan Proposal Proyek
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="crisp-dm-modeling" class="center middle" style="padding: 10px;">
-<h3>CRISP-DM: Modeling</h3>
-<p>Menggunakan <strong>Regresi Linear Berganda</strong>:</p>
-<p>model &lt;- lm(medv ~ rm + lstat + nox + dis + crim + black, data =
-Boston)</p>
-<p>summary(model)</p>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Usulan Proposal Proyek
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="crisp-dm-evaluation" class="center middle" style="padding: 10px;">
-<h3>CRISP-DM: Evaluation</h3>
-<p><strong>Mengukur performa model, apakah sudah menjawab tujuan
-proyek</strong>:</p>
-<p>Cek R², p-value, akurasi model.</p>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Usulan Proposal Proyek
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="crisp-dm-deployment" class="center middle" style="padding: 10px;">
-<h3>CRISP-DM: Deployment</h3>
-<p><strong>Menerapkan model ke dunia nyata, membuat dashboard, laporan,
-atau API</strong>:</p>
-</section>
 </section>
 <section class="slide level2">
 

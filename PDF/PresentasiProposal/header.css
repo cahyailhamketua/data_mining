@@ -1,28 +1,62 @@
-.slide-header-left {
+/* ===== Global Slide Header Style ===== */
+
+.slide-header-left,
+.slide-header-right {
   position: fixed;
-  top: 0px;
-  left: 20px;
-  font-size: 12px;
-  color: #000;
-  z-index: 1000;
+  top: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  z-index: 9999;
+  opacity: 0.95;
+}
+
+.slide-header-left {
+  left: 30px;
 }
 
 .slide-header-right {
-  position: fixed;
-  top: 0px;
-  right: 20px;
-  font-size: 12px;
-  color: #000;
-  z-index: 1000;
+  right: 30px;
 }
 
+/* Garis di bawah header */
 .slide-header-line {
   position: fixed;
-  top: 30px;
+  top: 55px;
   left: 0;
   right: 0;
-  height: 1px;
-  width: 100%;
-  background-color: #ddd;
-  z-index: 999;
+  height: 2px;
+  background: linear-gradient(to right, #2c3e50, #bdc3c7);
+  opacity: 0.7;
+  z-index: 9998;
+}
+
+/* ==== Improve Default Layout ==== */
+.reveal .slides section {
+  padding-top: 70px !important; /* Biar gak ketabrak header */
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.reveal p, .reveal li {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #34495e;
+}
+
+/* ==== Optional: Glow Title Slide ==== */
+.title-slide {
+  text-align: center;
+  margin-top: 80px;
+}
+
+/* ==== FIX TERPENTING ==== */
+/* Biar styling header kepake di semua slide */
+.reveal .slide-header-left,
+.reveal .slide-header-right,
+.reveal .slide-header-line {
+  position: fixed !important;
 }
