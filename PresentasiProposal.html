@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc">
   <meta name="author" content="Kelompok 7 - Kelas A" />
   <meta name="dcterms.date" content="2025-01-01" />
-  <title>Laporan Hasil Proyek Data Mining</title>
+  <title>Proposal Proyek Data Mining</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -46,69 +46,6 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-{ counter-reset: source-line 0; }
-pre.numberSource code > span
-{ position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-{ content: counter(source-line);
-position: relative; left: -1em; text-align: right; vertical-align: baseline;
-border: none; display: inline-block;
--webkit-touch-callout: none; -webkit-user-select: none;
--khtml-user-select: none; -moz-user-select: none;
--ms-user-select: none; user-select: none;
-padding: 0 4px; width: 4em;
-color: #aaaaaa;
-}
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
-div.sourceCode
-{ }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } 
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
-code span.at { color: #7d9029; } 
-code span.bn { color: #40a070; } 
-code span.bu { color: #008000; } 
-code span.cf { color: #007020; font-weight: bold; } 
-code span.ch { color: #4070a0; } 
-code span.cn { color: #880000; } 
-code span.co { color: #60a0b0; font-style: italic; } 
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
-code span.do { color: #ba2121; font-style: italic; } 
-code span.dt { color: #902000; } 
-code span.dv { color: #40a070; } 
-code span.er { color: #ff0000; font-weight: bold; } 
-code span.ex { } 
-code span.fl { color: #40a070; } 
-code span.fu { color: #06287e; } 
-code span.im { color: #008000; font-weight: bold; } 
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
-code span.kw { color: #007020; font-weight: bold; } 
-code span.op { color: #666666; } 
-code span.ot { color: #007020; } 
-code span.pp { color: #bc7a00; } 
-code span.sc { color: #4070a0; } 
-code span.ss { color: #bb6688; } 
-code span.st { color: #4070a0; } 
-code span.va { color: #19177c; } 
-code span.vs { color: #4070a0; } 
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 
   <style type="text/css">
@@ -487,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Laporan Hasil Proyek Data Mining</h1>
+  <h1 class="title">Proposal Proyek Data Mining</h1>
   <h1 class="subtitle">Prediksi Harga Rumah Menggunakan Regresi Linear
 pada Dataset Boston Housing</h1>
   <h2 class="author">Kelompok 7 - Kelas A</h2>
@@ -497,7 +434,7 @@ pada Dataset Boston Housing</h1>
 <section class="slide level2">
 
 <div class="slide-header-left">
-Laporan Hasil Proyek Data Mining
+Usulan Proposal Proyek
 </div>
 <div class="slide-header-right">
 Kelompok 7 - Kelas A
@@ -517,7 +454,7 @@ Kelompok 7 - Kelas A
 <section class="slide level2">
 
 <div class="slide-header-left">
-Laporan Hasil Proyek Data Mining
+Usulan Proposal Proyek
 </div>
 <div class="slide-header-right">
 Kelompok 7 - Kelas A
@@ -534,31 +471,7 @@ Boston Housing</strong></p>
 <section class="slide level2">
 
 <div class="slide-header-left">
-Laporan Hasil Proyek Data Mining
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="pendahuluan" class="center middle" style="padding: 10px; font-size: xx-large;">
-<h3>Pendahuluan</h3>
-<p>Sektor properti berperan penting dalam pembangunan wilayah dan
-kesejahteraan masyarakat. Harga rumah mencerminkan kondisi sosial,
-kualitas lingkungan, serta dinamika ekonomi.</p>
-<p>Dataset Boston Housing berisi 14 variabel terkait kondisi sosial,
-lingkungan, dan fisik hunian.</p>
-<p>Metode regresi linear berganda digunakan karena memberikan
-interpretasi yang jelas pada pengaruh setiap variabel.</p>
-<p>Penelitian menggunakan kerangka CRISP-DM untuk alur analisis yang
-sistematis.</p>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Laporan Hasil Proyek Data Mining
+Usulan Proposal Proyek
 </div>
 <div class="slide-header-right">
 Kelompok 7 - Kelas A
@@ -654,7 +567,7 @@ Kelompok 7 - Kelas A
 <ul>
 <li>Dataset: <strong>Boston Housing</strong></li>
 <li>Sumber: Paket <strong>MASS</strong> pada R</li>
-<li>Total Observasi: 506 rumah<br />
+<li>Observasi: 506 rumah<br />
 </li>
 <li>Variabel: 14 (13 prediktor + 1 target)</li>
 </ul>
@@ -735,117 +648,6 @@ Kelompok 7 - Kelas A
 <div class="slide-header-line">
 
 </div>
-<section id="persiapan-awal" class="center middle" style="padding: 10px;">
-<h3>Persiapan Awal</h3>
-<p><strong>Library</strong> yang digunakan:</p>
-<ol type="1">
-<li>MASS – memanggil dataset Boston</li>
-<li>dplyr – manipulasi data</li>
-<li>caret – pembagian data</li>
-<li>ggplot2 – visualisasi</li>
-</ol>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Usulan Proposal Proyek
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="pembagian-data" class="center middle" style="padding: 10px;">
-<h3>Pembagian Data</h3>
-<ul>
-<li>80% data latih</li>
-<li>20% data uji</li>
-<li>Menggunakan fungsi <strong>createDataPartition</strong> dari
-caret</li>
-</ul>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Usulan Proposal Proyek
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="normalisasi-data" class="center middle" style="padding: 10px;">
-<h3>Normalisasi Data</h3>
-<p>Menggunakan metode <strong>Z-Score</strong>. Adapun manfaatnya
-adalah:</p>
-<ol type="1">
-<li>Menyetarakan skala variabel</li>
-<li>Mengurangi dominasi fitur tertentu</li>
-<li>Meningkatkan stabilitas model</li>
-</ol>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Pembangunan Model
-</div>
-<div class="slide-header-right">
-Kelompok 7
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="pembangunan-model" class="center middle" style="padding: 10px;">
-<h3><strong>Pembangunan Model</strong></h3>
-<p>Model: <strong>Regresi Linear Berganda</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(medv <span class="sc">~</span> ., <span class="at">data =</span> train_scaled)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, <span class="at">newdata =</span> test_scaled)</span></code></pre></div>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Usulan Proposal Proyek
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="evaluasi-model" class="center middle" style="padding: 10px;">
-<h3>Evaluasi Model</h3>
-<p><strong>Matrik</strong> yang digunakan adalah:</p>
-<ol type="1">
-<li>MAE = 0.367</li>
-<li>MSE = 0.251</li>
-<li>RMSE = 0.501</li>
-<li>R² = 0.757</li>
-</ol>
-<p><strong>Interpretasi</strong>:</p>
-<ul>
-<li>Error prediksi moderat</li>
-<li>Model menjelaskan 75.7% variasi harga rumah</li>
-<li>Cukup baik sebagai baseline</li>
-</ul>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Usulan Proposal Proyek
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
 <section id="crisp-dm-business-understanding" class="center middle" style="padding: 10px;">
 <h3>CRISP-DM: Business Understanding</h3>
 <ul>
@@ -910,43 +712,7 @@ Kelompok 7 - Kelas A
 <h3>CRISP-DM: Modeling</h3>
 <p>Menggunakan <strong>Regresi Linear Berganda</strong>:</p>
 <p>model &lt;- lm(medv ~ rm + lstat + nox + dis + crim + black, data =
-Boston)</p>
-<p>summary(model)</p>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Usulan Proposal Proyek
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="crisp-dm-evaluation" class="center middle" style="padding: 10px;">
-<h3>CRISP-DM: Evaluation</h3>
-<p><strong>Mengukur performa model, apakah sudah menjawab tujuan
-proyek</strong>:</p>
-<p>Cek R², p-value, akurasi model.</p>
-</section>
-</section>
-<section class="slide level2">
-
-<div class="slide-header-left">
-Usulan Proposal Proyek
-</div>
-<div class="slide-header-right">
-Kelompok 7 - Kelas A
-</div>
-<div class="slide-header-line">
-
-</div>
-<section id="crisp-dm-deployment" class="center middle" style="padding: 10px;">
-<h3>CRISP-DM: Deployment</h3>
-<p><strong>Menerapkan model ke dunia nyata, membuat dashboard, laporan,
-atau API</strong>:</p>
+Boston) summary(model)</p>
 </section>
 </section>
 <section class="slide level2">
