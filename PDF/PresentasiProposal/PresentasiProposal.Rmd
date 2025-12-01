@@ -279,6 +279,43 @@ Sejalan dengan pola historis diskriminasi perumahan di Boston.
 <div class="slide-header-line"></div>
 <div class="center middle" style="padding: 10px;">
 
+### Visualisasi Model
+
+Plot **aktual vs prediksi** menunjukkan:
+
+1. Titik mendekati garis y = x
+2. Hubungan linier ditangkap baik oleh model
+3. Outlier moderat
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### Kesimpulan
+
+- R² = 0.757 → model cukup baik
+- Faktor paling berpengaruh: lstat, dis, rm, rad, tax
+- Regresi linear efektif sebagai baseline
+
+### Saran
+
+- Gunakan model lebih kompleks (RF, GBM, NN)
+- Tangani outlier & distribusi skewed
+- Tambah analisis multikolineritas
+- Lakukan cross-validation
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
 ### CRISP-DM: Business Understanding
 - Menentukan konteks masalah properti.
 - Mengidentifikasi faktor sosial & ekonomi penting.
