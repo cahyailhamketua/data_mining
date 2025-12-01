@@ -245,6 +245,40 @@ pred <- predict(model, newdata = test_scaled)
 <div class="slide-header-line"></div>
 <div class="center middle" style="padding: 10px;">
 
+### Feature Importance
+Fitur yang paling **Berpenagaruh**
+
+1. lstat (pengaruh negatif terbesar)
+2. dis
+3. rm
+4. rad
+5. tax
+
+Interpretasi sesuai literatur ekonomi dan urban planning.
+
+</div>
+---
+
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
+### Variabel Black
+
+Variabel transformasi berdasarkan proporsi penduduk kulit hitam.
+Hasil model: koefisien positif → ketika nilai **black** meningkat, harga rumah meningkat.
+Sejalan dengan pola historis diskriminasi perumahan di Boston.
+
+</div>
+---
+
+<div class="slide-header-left">Usulan Proposal Proyek</div>
+<div class="slide-header-right">Kelompok 7 - Kelas A</div>
+<div class="slide-header-line"></div>
+<div class="center middle" style="padding: 10px;">
+
 ### CRISP-DM: Business Understanding
 - Menentukan konteks masalah properti.
 - Mengidentifikasi faktor sosial & ekonomi penting.
